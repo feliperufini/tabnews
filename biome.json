@@ -17,7 +17,7 @@
 		}
 	},
 	"files": {
-		"ignore": ["app.json"]
+		"ignore": ["app.json", "*.test.js"]
 	},
 	"linter": {
 		"enabled": true,

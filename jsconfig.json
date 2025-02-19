@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@infra/*": ["infra/*"],
+			"@models/*": ["models/*"],
+			"@pages/*": ["src/pages/api/v1/*"],
+			"@tests/integration/*": ["src/pages/tests/integration/api/v1/*"],
+		}
+	}
+}

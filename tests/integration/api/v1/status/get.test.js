@@ -5,9 +5,11 @@ test("GET to api/v1/status should return 200", async () => {
   const responseBody = await response.json()
   const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString()
 
+  console.log(responseBody)
+
   expect(responseBody.updated_at).toBe(parsedUpdatedAt)
-  expect(Number(responseBody.postgres_version)).toBeGreaterThanOrEqual(17.3)
-  expect(responseBody.max_connections).toBe(100)
-  expect(responseBody.active_connections).toBeDefined()
-  expect(responseBody.active_connections).not.toBeNull()
+  expect(responseBody.dependencies.database.postgres_version).toBeGreaterThanOrEqual(17.3)
+  expect(responseBody.dependencies.database.max_connections).toBe(100)
+  expect(responseBody.dependencies.database.opened_connections).toBeDefined()
+  expect(responseBody.dependencies.database.opened_connections).not.toBeNull()
 })
